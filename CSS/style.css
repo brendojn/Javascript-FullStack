@@ -1,0 +1,25 @@
+/*.orange-text{*/
+/*    color: orange;*/
+/*    font-size: 20px;*/
+/*}*/
+
+/*.big-text{*/
+/*    font-size: 40px;*/
+/*}*/
+
+/** {*/
+/*    border: 2px solid;*/
+/*}*/
+
+/*Todo a que for filho de l1 vai receber o estilo abaixo:*/
+/*li > a {*/
+/*    color: red;*/
+/*}*/
+
+/*Todo h4 após h1 vai receber o estilo abaixo:*/
+
+/*h1 + h4{*/
+/*    border: 4px dashed;*/
+/*}*/
+
+
