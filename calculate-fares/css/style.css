@@ -1,0 +1,36 @@
+nav.navbar {
+    height: 70px;
+    border-bottom: 2px solid black;
+    border-color: coral;
+
+    .navbar-brand {
+
+        img {
+            height: 200px;
+            margin-top: 15px;
+            max-height: 4rem;
+        }
+    }
+}
+
+.navbar-item img {
+    max-height: 4rem;
+}
+
+.image img {
+    display: block;
+    height: auto;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.field input {
+    width: 30%;
+}
+
+.field button {
+    margin-left: 50%;
+    margin-right: auto;
+}

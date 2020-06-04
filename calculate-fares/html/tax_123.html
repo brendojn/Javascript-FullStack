@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Precificação</title>
+    <script src="../js/tax_123.js"></script>
+</head>
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+            <img src="https://1.bp.blogspot.com/-7lDR4qkGvks/XIGn3Rc4AjI/AAAAAAAAHj0/7oLJARMHDIAwE7_PAvwUCcIAYJQhRn23gCK4BGAYYCw/w1200-h630-p-k-no-nu/logo-123Milhas.png"
+                 alt="Bulma: Free, open source, and modern CSS framework based on Flexbox">
+        </a>
+    </div>
+</nav>
+<br>
+<nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+        <li><a href="third_rule.html">Yield 3° Regra</a></li>
+        <li><a href="tax_123.html">Tarifa 123Milhas</a></li>
+        <li><a href="tax_out_in.html">Tarifa Ida e Volta</a></li>
+        <li><a href="special_fare.html">Tarifa Especial</a></li>
+    </ul>
+</nav>
+<br><br>
+<form onsubmit="calculateFare()">
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <label class="label">Parametros da Tarifa 123Milhas</label>
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <p class="control">
+                    <input class="input" type="text" id="txtVrFixed" placeholder="Valor fixo" required>
+                    <input class="input" type="text" id="txtVrPercentage" placeholder="Valor em porcentagem" required>
+                </p>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <label class="label">Parametros da 3° regra - Voo de ida</label>
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <p class="control">
+                    <input class="input" type="text" id="txtConfigOutbound"
+                           placeholder="Configuração de tarifa para voo de ida">
+                    <input class="input" type="number" id="txtVrMillesOutbound" placeholder="Quantidade de milhas ida">
+                    <input class="input" type="text" id="txtVrOutbound" placeholder="Valor do voo de ida em reais">
+                <div class="field-label is-normal">
+                    <label class="result-outbound"></label>
+                </div>
+                </p>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <label class="label">Parametros da 3° regra - Voo de volta</label>
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <p class="control">
+                    <input class="input" type="text" id="txtConfigInbound"
+                           placeholder="Configuração de tarifa para voo de volta">
+                    <input class="input" type="number" id="txtVrMillesInbound" placeholder="Quantidade de milhas volta">
+                    <input class="input" type="text" id="txtVrInbound" placeholder="Valor do voo de volta em reais">
+                <div class="field-label is-normal">
+                    <label class="result-inbound"></label>
+                </div>
+                </p>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="container">
+
+        <div class="field">
+            <button class="button is-primary center">Calcular</button>
+        </div>
+    </div>
+    <div class="field-label is-normal">
+        <label class="result"></label>
+    </div>
+</form>
+
+
+</body>
+</html>
