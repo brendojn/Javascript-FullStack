@@ -44,17 +44,20 @@ function simpleCalculate(milles, ...configs) {
 }
 
 function applyYield(airlinePrice, milles, ...configs) {
-    let yield
+    let yield = 0.0
     let ourPrice = simpleCalculate(milles, ...configs)
     let economy = airlinePrice - ourPrice
-
+    console.log(economy)
     if (economy < convertStringFloat(configs[8])) {
-        yield = 0.0
+        return "Foi aplicado a tarifa sem yield R$" + ourPrice
     } else {
         yield = (economy - convertStringFloat(configs[8])) * (convertStringFloat(configs[9]) / 100)
+        console.log(yield)
     }
+
     let firstOptionYield = (ourPrice + yield) / (milles / 1000)
     let secondOptionYield = convertStringFloat(configs[10])
+
 
     if (ourPrice > airlinePrice) {
         return "Perdemos para a cia aérea R$" + ourPrice

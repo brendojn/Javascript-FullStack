@@ -1,8 +1,7 @@
 function testGenerate() {
     event.preventDefault()
 
-    const iatasNational = ["CGH", "GYN", "POA", "CNF", "GRU", "VCP", "SDU", "GIG", "JPA", "NAT", "VIX", "CWB",
-        "BSB", "RBR", "BEL", "BVB", "PMW", "MCZ", "BPS", "SSA", "FOR", "SLZ", "REC", "FLN"]
+    const iatasNational = ["CGH", "POA", "CNF", "GRU", "RBR", "BEL", "SSA", "FOR", "REC", "FLN"]
 
 
     const iatasInternational = ["JFK", "SCL", "FCO", "BUE", "FLL ", "LIM", "MVD", "ASU", "JNB", "BOG", "SYD", "BOS", "JNB", "IAD",
@@ -29,8 +28,8 @@ function testGenerate() {
 
         cont++;
 
-        console.log(" | " + originNational + " | " +  destinationNational + " | " + dates[0] +  " | "  + dates[1] +  " | " +
-            + passengers[0] + " | " + passengers[1] + " | " + "Sim" + " | " + "Não" + " | " + cont + " | ")
+        console.log(" | " + originNational + " | " +  destinationNational + " | " + dates[0] +  " | "
+            + passengers[0] + " | " + passengers[1] + " | " + cont + " | ")
     }
 
     for (let i = 0; i < parseInt(international); i++) {
@@ -42,8 +41,8 @@ function testGenerate() {
 
         cont++;
 
-        console.log(" | " + originNational + " | " +  destinationInternational + " | " + dates[0] + " | " + dates[1] + " | " +
-            + passengers[0] + " | " + passengers[1] + " | " + "Não" + " | " + "Sim" + " | " + cont + " | ")
+        console.log(" | " + originNational + " | " +  destinationInternational + " | " + dates[0] + " | "
+            + passengers[0] + " | " + passengers[1] + " | ")
     }
 }
 

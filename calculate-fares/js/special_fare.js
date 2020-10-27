@@ -36,8 +36,9 @@ function applySpecial123(airlinePrice, milles, ...configs) {
 function applyYield(airlinePrice, milles, ...configs) {
     let ourPrice = simpleCalculate(milles, ...configs)
     let economy = airlinePrice - ourPrice
+
     if (economy < convertStringFloat(configs[8])) {
-        yield = 0.0
+        return "Foi aplicado a tarifa sem yield R$" + ourPrice
     } else {
         yield = (economy - convertStringFloat(configs[8])) * (convertStringFloat(configs[9]) / 100)
     }

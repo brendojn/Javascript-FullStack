@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Precificação</title>
-    <script src="../js/third_rule.js"></script>
+    <script src="../js/conventional_fare.js"></script>
 </head>
 <body>
 <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -29,10 +29,37 @@
         <li><a href="conventional_fare.html">Tarifa Convencional</a></li>
     </ul>
 </nav>
-<div class="level-item has-text-centered">
-<figure class="image is-256x256">
-    <img src="https://1.bp.blogspot.com/-7lDR4qkGvks/XIGn3Rc4AjI/AAAAAAAAHj0/7oLJARMHDIAwE7_PAvwUCcIAYJQhRn23gCK4BGAYYCw/w1200-h630-p-k-no-nu/logo-123Milhas.png">
-</figure>
-</div>
+<br><br>
+<form onsubmit="calculateFare()">
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <label class="label">Parametros da tarifação convencional</label>
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <p class="control">
+                    <input class="input" type="text" id="txtConfig"
+                           placeholder="Configuração da tarifa">
+                    <input class="input" type="number" id="txtVrPriceCia" placeholder="Valor do voo em reais na cia aérea">
+                    <input class="input" type="number" id="txtVrPartner" placeholder="Valor do voo no parceiro">
+                <div class="field-label is-normal">
+                    <label class="result-outbound"></label>
+                </div>
+                </p>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="container">
+
+        <div class="field">
+            <button class="button is-primary center">Calcular</button>
+        </div>
+    </div>
+    <div class="field-label is-normal">
+        <label class="result"></label>
+    </div>
+</form>
+
 </body>
 </html>
