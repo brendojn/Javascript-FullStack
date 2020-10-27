@@ -28,8 +28,14 @@ function ApplyFare(airlinePrice, partnerPrice, ...configs) {
     console.log(yield)
     console.log(maximum)
     if (yield < maximum) {
+        if (typeof configs[8] === 'undefined') {
+            return yield
+        }
         return applyPlus(yield, ...configs)
     } else {
+        if (typeof configs[8] === 'undefined') {
+            return maximum
+        }
         return applyPlus(maximum, ...configs);
     }
 
@@ -46,7 +52,7 @@ function maximumFare(partnerPrice, ...configs) {
 function economy(airlinePrice, partnerPrice, ...configs) {
     let economyFare = (airlinePrice - partnerPrice) - parseFloat(configs[5]);
 
-    if (economyFare >= 0 ) {
+    if (economyFare >= 0) {
         return economyFare
     } else {
         return 0.0
