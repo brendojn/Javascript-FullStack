@@ -1,13 +1,24 @@
 function calculateFare() {
     event.preventDefault()
 
-    let config = document.querySelector("#txtConfig").value
-    let configs = config.split(";")
-    let airlinePrice = document.querySelector("#txtVrPriceCia").value
-    let partnerPrice = document.querySelector("#txtVrPartner").value
+    let configOutbound = document.querySelector("#txtConfigOutbound").value
+    let configsOutbound = configOutbound.split(";")
+    let airlinePriceOutbound = document.querySelector("#txtVrPriceCiaOutbound").value
+    let partnerPriceOutbound = document.querySelector("#txtVrPartnerOutbound").value
 
-    let price = applyConventionalFare(airlinePrice, partnerPrice, ...configs)
-    document.querySelector(".result-outbound").innerText = price
+    let configInbound = document.querySelector("#txtConfigInbound").value
+    let configsInbound = configOutbound.split(";")
+    let airlinePriceInbound = document.querySelector("#txtVrPriceCiaInbound").value
+    let partnerPriceInbound = document.querySelector("#txtVrPartnerInbound").value
+
+
+    let priceOutbound = applyConventionalFare(airlinePriceOutbound, partnerPriceOutbound, ...configsOutbound)
+    document.querySelector(".result-outbound").innerText = priceOutbound
+
+    if (configInbound[1] != undefined) {
+        let priceInbound = applyConventionalFare(airlinePriceInbound, partnerPriceInbound, ...configsInbound)
+        document.querySelector(".result-inbound").innerText = priceInbound
+    }
 }
 
 function applyConventionalFare(airlinePrice, partnerPrice, ...configs) {
@@ -22,11 +33,10 @@ function applyConventionalFare(airlinePrice, partnerPrice, ...configs) {
 
 function ApplyFare(airlinePrice, partnerPrice, ...configs) {
     let economyFare = economy(airlinePrice, partnerPrice, ...configs)
-    console.log(economyFare)
+
     let yield = applyYield(partnerPrice, economyFare, ...configs)
     let maximum = maximumFare(partnerPrice, ...configs)
-    console.log(yield)
-    console.log(maximum)
+
     if (yield < maximum) {
         if (typeof configs[8] === 'undefined') {
             return yield
@@ -38,7 +48,6 @@ function ApplyFare(airlinePrice, partnerPrice, ...configs) {
         }
         return applyPlus(maximum, ...configs);
     }
-
 }
 
 function applyYield(partnerPrice, economy, ...configs) {
@@ -59,12 +68,14 @@ function economy(airlinePrice, partnerPrice, ...configs) {
     }
 }
 
+function applyPlus(price, ...configs) {
+    return price + (price * (parseFloat(configs[8].toString().replace(".", ",")) / 100))
+}
+
 function convertStringFloat(value) {
     value = value.replace(".", "").replace(",", ".");
     value = parseFloat(value).toFixed(2);
     return value;
 }
 
-function applyPlus(price, ...configs) {
-    return price + (price * (configs[8] / 100))
-}
+
