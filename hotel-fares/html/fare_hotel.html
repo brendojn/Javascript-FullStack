@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Precificação</title>
+    <script src="../js/hotel_fare.js"></script>
+</head>
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+            <img src="https://1.bp.blogspot.com/-7lDR4qkGvks/XIGn3Rc4AjI/AAAAAAAAHj0/7oLJARMHDIAwE7_PAvwUCcIAYJQhRn23gCK4BGAYYCw/w1200-h630-p-k-no-nu/logo-123Milhas.png"
+                 alt="Bulma: Free, open source, and modern CSS framework based on Flexbox">
+        </a>
+    </div>
+</nav>
+<br>
+<nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+        <li><a href="fare_hotel.html">Preficicação do hotel</a></li>
+    </ul>
+</nav>
+<br><br>
+<form onsubmit="calculateFare()">
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <label class="label">Parametros do hotel</label>
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <p class="control">
+                    <input class="input" type="text" id="txtVrHotel" placeholder="Valor do hotel" required>
+                    <input class="input" type="text" id="txtVrMarkup" placeholder="% do markup" required>
+                    <input class="input" type="text" id="txtVrFix" placeholder="Valor fixo" required>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="form-control collectes-ville text-center" >
+        <label class="result"></label>
+    </div>
+    <br><br>
+    <div class="container">
+
+        <div class="field">
+            <button class="button is-primary center">Calcular</button>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>

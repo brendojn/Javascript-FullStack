@@ -21,8 +21,17 @@
 </nav>
 <br>
 
-<form onsubmit="testGenerate()">
-    <button class="button is-large is-fullwidth">Gerar massa de testes</button>
+<form onsubmit="testGenerateSearch()">
+    <button class="button is-large is-fullwidth">Gerar massa de testes para pesquisa</button>
+
+    <div class="field-label is-normal">
+        <div class="result"></div>
+    </div>
+
+</form>
+
+<form onsubmit="testGenerateCheckout()">
+    <button class="button is-large is-fullwidth">Gerar massa de testes para checkout</button>
 
     <div class="field-label is-normal">
         <div class="result"></div>

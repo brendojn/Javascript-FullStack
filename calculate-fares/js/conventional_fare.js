@@ -7,7 +7,7 @@ function calculateFare() {
     let partnerPriceOutbound = document.querySelector("#txtVrPartnerOutbound").value
 
     let configInbound = document.querySelector("#txtConfigInbound").value
-    let configsInbound = configOutbound.split(";")
+    let configsInbound = configInbound.split(";")
     let airlinePriceInbound = document.querySelector("#txtVrPriceCiaInbound").value
     let partnerPriceInbound = document.querySelector("#txtVrPartnerInbound").value
 
@@ -77,5 +77,6 @@ function convertStringFloat(value) {
     value = parseFloat(value).toFixed(2);
     return value;
 }
+
 
 
